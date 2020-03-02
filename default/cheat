@@ -1,0 +1,27 @@
+# 文字列を含むチートシートを検索
+cheat -s <文字列>
+cheat -r -s '<正規表現>'
+
+# タグで制限
+cheat <チートシート> -t <タグ> 
+
+# To see example usage of a program:
+cheat <command>
+
+# To edit a cheatsheet
+cheat -e <command>
+
+# To view the configured cheatpaths
+cheat -d
+
+# To list available cheatsheets
+cheat -l
+
+# To search available cheatsheets
+cheat -s <command>
+
+# To search for cheatsheets contain an IP address
+cheat -r -s '(?:[0-9]{1,3}\.){3}[0-9]{1,3}'
+
+# To get the current `cheat' version
+cheat -v

@@ -1,0 +1,18 @@
+---
+syntax: bash
+tags: [ openssl, pkcs12, pfx ]
+---
+# 
+openssl pkcs12 -export -out output.pfx -inkey private.key -in cert.pem -certfile ca.pem
+
+# PFX から PEM (Apache, OpenSSL 標準) に変換する
+openssl pkcs12 -in input.pfx -out output.pem
+
+# 読み込み & X509 を出力
+openssl pkcs12 -in file.p12 -nodes -passin pass:foobar | openssl x509 -noout -fingerprint
+
+# 秘密鍵だけ取り出す
+openssl pkcs12 -in input.pfx -nocerts -out output_key.pem
+
+# 証明書だけ取り出す
+openssl pkcs12 -in input.pfx -clcerts -nokeys -out output_crt.pem

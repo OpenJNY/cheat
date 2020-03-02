@@ -1,0 +1,20 @@
+---
+syntax: powershell
+tags: [ pwsh, env ]
+---
+# 環境変数の一覧を取得する
+Get-ChildItem Env: | Sort Name
+
+# fzf で環境変数を検索
+(Get-Item Env:$((Get-ChildItem Env:).Name | fzf)).Value
+
+# パスを追加する
+$Env:Path += ";C:\Temp"
+
+# ユーザー/システム環境変数を取得する
+[System.Environment]::GetEnvironmentVariable("VARIABLE", "User")
+[System.Environment]::GetEnvironmentVariable("VARIABLE", "Machine")
+
+# ユーザー/システム環境変数をセットする
+[System.Environment]::SetEnvironmentVariable("VARIABLE", "VALUE", "User")
+[System.Environment]::SetEnvironmentVariable("VARIABLE", "VALUE", "Machine")
