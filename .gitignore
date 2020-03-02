@@ -1,0 +1,11 @@
+*
+!*/
+
+!.gitignore
+!.gitsubmodule
+!README.md
+!template.conf.yml
+
+# default cheatsheets
+!default/**
+!community/
