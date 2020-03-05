@@ -1,0 +1,6 @@
+---
+syntax: powershell
+tags: [ azure, powershell ]
+---
+# select subscription
+Get-AzSubscription | where { $_.Name.startswith("Azure Internal Subscription") } | Select-AzSubscription
