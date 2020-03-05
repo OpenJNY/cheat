@@ -1,0 +1,6 @@
+---
+syntax: powershell
+tags: [ powershell ]
+---
+# PSCustomObject でパイプ
+Get-Process | % { [PSCustomObject]@{"Name"=$_.ProcessName; "Id"=$_.Id} }
