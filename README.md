@@ -24,7 +24,7 @@ cd cheat
 cp template.conf.yml conf.yml
 ```
 
-3. Registor an environment variable `CHEAT_CONFIG_PATH` with value  `~/cheat/conf.yml`.
+3. Registor an environment variable `CHEAT_CONFIG_PATH` with value `~/cheat/conf.yml`.
 
 ```
 # on shell
@@ -32,6 +32,15 @@ $env:CHEAT_CONFIG_PATH = "~/cheat/conf.yml"
 
 # on system
 [System.Environment]::SetEnvironmentVariable("CHEAT_CONFIG_PATH", "~/cheat/conf.yml", "User")
+```
+
+## Update community cheatsheets
+
+```ps1
+git submodule init # optional
+git submodule update --remote community
+git add community
+git commit -m "update: community"
 ```
 
 ## Add cheatsheet repo
